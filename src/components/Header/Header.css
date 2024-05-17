@@ -1,0 +1,44 @@
+header{
+    height:90px;
+    border-bottom: 2px solid gainsboro;
+}
+
+.header__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+    width:1350px;
+    margin:0 auto;
+    padding:10px;
+}
+
+.header__logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:0px;
+}
+
+.header__logo img{
+    height:60px;
+    width:60px;
+}
+
+.header__category{
+    display: flex;
+    gap:50px;
+}
+
+.header__category a{
+    list-style-type: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.header__category a:hover{
+    border-bottom: 2px solid black;
+    transition: all 3s ease-out;
+}
+
+
