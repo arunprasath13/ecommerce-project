@@ -25,7 +25,12 @@ const TableView = () => {
           <tbody>
             <tr>
               <th scope="row">{index}</th>
-              <td>{cart.title}</td>
+              <td>
+                <div className="flex">
+                  <img src={cart.image}/>
+                  <td>{cart.title}</td>
+                </div>
+              </td>
               <td>{cart.price}</td>
               <td>{cart.category}</td>
             </tr>

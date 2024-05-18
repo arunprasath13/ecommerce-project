@@ -1,11 +1,49 @@
-table{
-    margin-top: 40px;
+.cart-page {
+  width:100%;
+  display: flex;
 }
 
-.view__btn{
+.left {
+    margin-left: 20px;
+    width:80%;
+    border:3px solid gainsboro;
+    min-height:100vh;
+}
+
+.left__container{
+    width:100%;
+    margin: 0 auto;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  gap:20px;
+}
+
+.flex img{
+  width:50px;
+  height:50px;
+}
+ 
+.right{
+    width:20%;
+    margin-left: 20px;
+    height:30vh;
+    /* background-color: red; */
     display: flex;
-    justify-content: flex-end;
-    margin-top: 30px;
-    margin-right: 30px;
-    gap:20px;
+    flex-direction: column;
+    align-items: center;
+    border:3px solid gainsboro
+}
+table {
+  margin-top: 40px;
+}
+
+.view__btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  margin-right: 30px;
+  gap: 20px;
 }

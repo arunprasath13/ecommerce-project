@@ -31,5 +31,5 @@ const apiSlice = createSlice({
   },
 });
 
-export const { fetchApi } = apiSlice.actions;
+// export const { fetchApi } = apiSlice.actions;
 export default apiSlice.reducer;
