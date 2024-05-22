@@ -22,10 +22,10 @@ function App() {
       <Header />
 
       <Routes>
-        {/* <Route path="/" element={<Product />} /> */}
         <Route path="/" element={<HomePage />} />
         <Route path="/cartpage" element={<Cart />} />
-        <Route path="/layout" element={<Layout />} />
+        <Route path="/address" element={<DeliveryDetails />} />
+        <Route path="/payment" element={<PaymentDetails />} />
         <Route path="/filteredProducts/:category" element={<Product />} />
       </Routes>
     </div>
