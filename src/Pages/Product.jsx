@@ -1,13 +1,21 @@
-import React from 'react'
-import "../components/ProductCard/ProductCard.css"
-import ProductCard from '../components/ProductCard/ProductCard'
-import "./Product.css"
+import React from "react";
+import "../components/ProductCard/ProductCard.css";
+import ProductCard from "../components/ProductCard/ProductCard";
+import "./Product.css";
+import Filter from "../components/filter/Filter";
+import { useSelector } from "react-redux";
+// import PriceFilter from "../components/filter/PriceFilter";
 const Product = () => {
-  return (
-    <div className='product'>
-       <ProductCard />
-    </div>
-  )
-}
+  const filteredProducts = useSelector(
+    (state) => state.products.filteredProducts
+  );
 
-export default Product
+  return (
+    <div className="products">
+      <Filter />
+      <ProductCard />
+    </div>
+  );
+};
+
+export default Product;

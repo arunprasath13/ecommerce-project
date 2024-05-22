@@ -1,4 +1,5 @@
 import React from "react";
+import Rating from '@mui/material/Rating';
 import { useSelector } from "react-redux";
 const GridView = () => {
   const cartData = useSelector((state) => state.cart);
@@ -18,6 +19,7 @@ const GridView = () => {
             </div>
             <div className="card__rating">
               <p>{card.rating.rate}</p>
+              <Rating name="half-rating-read" defaultValue={2.5} precision={0.5} readOnly />
             </div>
             <div className="btns">
               <button>Buy now</button>

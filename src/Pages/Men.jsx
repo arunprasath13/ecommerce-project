@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector,useDispatch } from "react-redux";
 import "../components/ProductCard/ProductCard.css"
 import { addItems } from "../redux/cartSlice";
+import Filter from "../components/filter/Filter";
 const Men = () => {
   const dispatch = useDispatch();
   let products = useSelector((state) => state.api.data);
@@ -14,6 +15,7 @@ const Men = () => {
   }
   return (
     <div className="cards">
+       <Filter />
       {filteredProducts.map((card) => {
         return (
           <div className="card">

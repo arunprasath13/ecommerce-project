@@ -2,18 +2,24 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchApiData } from "../../redux/apiSlice";
 import { addItems } from "../../redux/cartSlice";
+import { useParams } from "react-router-dom";
 import "./ProductCard.css";
+import Rating from '@mui/material/Rating';
 
 const ProductCard = () => {
   const dispatch = useDispatch();
+  const { category } = useParams();
   const { data: cards, isLoading, error } = useSelector((state) => state.api);
-  const cartData = useSelector((state) => state.cart);
+  const { rating } = useSelector((state) => state.filter);
   const [isFetching, setIsFetching] = useState(false);
 
   useEffect(() => {
     setIsFetching(true);
     dispatch(fetchApiData())
       .unwrap()
+      .then((data) => {
+        console.log("Fetched data:", data);
+      })
       .catch((error) => {
         console.error("Error fetching data:", error);
       })
@@ -27,16 +33,26 @@ const ProductCard = () => {
   };
 
   if (isLoading || isFetching) {
-    return <div>Loading...</div>;
+    return <div style={{ textAlign: "center" }}>Loading...</div>;
   }
 
   if (error) {
     return <div>Error: {error.message}</div>;
   }
 
+  const filteredByCategory = category && category !== "All"
+    ? cards.filter((card) => card.category === category)
+    : cards;
+
+  const filteredByRating = rating > 0
+    ? filteredByCategory.filter((card) => card.price >= rating)
+    : filteredByCategory;
+
+  console.log("Products to display:", filteredByRating);
+
   return (
     <div className="cards">
-      {cards.map((card) => (
+      {filteredByRating.map((card) => (
         <div className="card" key={card.id}>
           <div className="card__img">
             <img src={card.image} alt={card.title} />
@@ -49,7 +65,7 @@ const ProductCard = () => {
               <p>{card.price}</p>
             </div>
             <div className="card__rating">
-              <p>{card.rating.rate}</p>
+              <Rating name="half-rating-read" defaultValue={card.rating.rate} size="large" precision={0.5} readOnly />
             </div>
             <div className="btns">
               <button>Buy now</button>
@@ -63,4 +79,9 @@ const ProductCard = () => {
 };
 
 export default ProductCard;
+
+
+
+
+
 

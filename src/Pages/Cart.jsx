@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import TableView from "../components/table/TableView";
 import GridView from "../components/table/GridView";
 import { Link } from "react-router-dom";
+import Filter from "../components/filter/Filter";
 const Cart = () => {
   const [status, setStatus] = useState("table");
   const cartData = useSelector((state) => state.cart);

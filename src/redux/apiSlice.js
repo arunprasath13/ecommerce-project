@@ -1,35 +1,34 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+// redux/apiSlice.js
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  data: [],
-  loading: false
-};
-
-export const fetchApiData = createAsyncThunk("api/fetchApi", async () => {
-  const response = await fetch("https://fakestoreapi.com/products/");
-  return response.json();
+export const fetchApiData = createAsyncThunk("api/fetchApiData", async () => {
+  const response = await fetch("https://fakestoreapi.com/products"); // Replace with your API endpoint
+  const data = await response.json();
+  return data;
 });
 
 const apiSlice = createSlice({
   name: "api",
-  initialState,
-  reducers: {},
+  initialState: {
+    data: [],
+    isLoading: false,
+    error: null,
+  },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchApiData.pending, (state, action) => {
-        state.loading = true;
+      .addCase(fetchApiData.pending, (state) => {
+        state.isLoading = true;
         state.error = null;
       })
       .addCase(fetchApiData.fulfilled, (state, action) => {
-        state.loading = false;
+        state.isLoading = false;
         state.data = action.payload;
       })
       .addCase(fetchApiData.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
+        state.isLoading = false;
+        state.error = action.error;
       });
   },
 });
 
-// export const { fetchApi } = apiSlice.actions;
 export default apiSlice.reducer;

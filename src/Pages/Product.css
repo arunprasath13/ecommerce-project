@@ -1,5 +1,4 @@
-.product{
-    width:100%;
-    display: grid;
-    place-items: center;
+.products{
+    display: flex;
+    justify-content: space-between;
 }

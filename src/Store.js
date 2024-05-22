@@ -3,12 +3,16 @@ import apiSlice from "./redux/apiSlice"
 import cartSlice from './redux/cartSlice';
 import deliveryDetailsReducer from "./redux/deliverySlice";
 import paymentDetailsReducer from "./redux/paymentDetails"
+import productSlice from "./redux/filteredProducts"
+import filterSlice from "./redux/ratingSlice"
 const store = configureStore({
   reducer: {
     api: apiSlice,
     cart:cartSlice,
     deliveryDetails: deliveryDetailsReducer,
-    paymentDetails: paymentDetailsReducer
+    paymentDetails: paymentDetailsReducer,
+    products: productSlice,
+    filter: filterSlice,
   },
 });
 
