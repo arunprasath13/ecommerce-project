@@ -1,0 +1,77 @@
+.billing-section {
+  width: 100%;
+}
+h2 {
+  font-size: 40px;
+}
+.billing__container {
+  max-width: 1300px;
+  margin: 0 auto;
+  /* background-color: red; */
+  display: flex;
+  gap: 40px;
+}
+
+.billing__left {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+
+.billing__right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 105px;
+  gap: 40px;
+}
+
+.billing__input input {
+  width: 100%;
+  padding: 10px 30px;
+}
+
+.billing__input {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-top: 30px;
+  gap: 30px;
+}
+.billing__btn {
+  margin-top: 30px;
+}
+
+.billing__total {
+  width: 70%;
+}
+
+.billing__total .flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 2px solid gainsboro;
+}
+
+p {
+  font-size: 20px;
+}
+.bank__details{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.bank__details label{
+   font-size: 20px;
+   margin-left: 10px;
+}
+
+.bank__details img{
+    width:40px;
+    height:40px;
+}
+
+.bank__img{
+    display: flex;
+    gap:10px;
+}
