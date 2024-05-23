@@ -102,10 +102,11 @@ const ProductCard = () => {
       <div
         className="btn"
         style={{
-          width: "200px",
           margin: "0 auto",
           textAlign: "center",
           display: "flex",
+          gap:"30px",
+          justifyContent:"center"
         }}
       >
         {pages.map((page) => {

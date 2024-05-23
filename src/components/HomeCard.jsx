@@ -49,7 +49,7 @@ const HomeCard = () => {
   }
 
   return (
-    <div style={{width:"100%"}}>
+    <div style={{ width: "100%" }}>
       <div className="cards">
         {currentPost.map((card) => (
           <div className="card" key={card.id}>
@@ -80,11 +80,18 @@ const HomeCard = () => {
           </div>
         ))}
       </div>
-      <div className="btn" style={{width:"200px",margin:"0 auto",textAlign:"center",display:"flex",}}>
-        {pages.map((page)=> {
-          return (
-            <button onClick={() => setCurrentPage(page)}>{page}</button>
-          )
+      <div
+        className="btn"
+        style={{
+          margin: "0 auto",
+          textAlign: "center",
+          display: "flex",
+          justifyContent:"center",
+          gap: "30px",
+        }}
+      >
+        {pages.map((page) => {
+          return <button onClick={() => setCurrentPage(page)}>{page}</button>;
         })}
       </div>
     </div>
